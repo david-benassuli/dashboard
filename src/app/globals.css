@@ -1,0 +1,614 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+  /* ===============================
+     BACKGROUNDS (GERAIS)
+  =============================== */
+  --bg: #0B1220;
+  --bg-dashboard: #0B1220;
+  --bg-aside: #0F1A2B;
+  --bg-title: #12151E;
+  --bg-active: #2C3340;
+  --bg-input: #1B2433;
+
+  /* ===============================
+     BACKGROUNDS (CARDS / SUPERFÍCIES)
+  =============================== */
+  --bg-card: #191E27;
+  --bg-cards: #111827;
+  --bg-cards-internal: #182235;
+  --bg-card-hover: #ffffff;
+
+  /* ===============================
+     TEXTO
+  =============================== */
+  --text: #E6EAF2;
+  --text-label: #B6C0CF;
+  --text-weak: #7C8798;
+
+  /* ===============================
+     BORDA / SOMBRA
+  =============================== */
+  --border-color: #243247;
+  --border: 1px solid var(--border-color);
+  --border-radius: 5px;
+  --box-shadow: 0px 2px 5px rgb(0,0,0, .5);
+
+  /* ===============================
+     DASH / STATUS
+  =============================== */
+  --bg-dash1: #3B82F6;
+  --bg-dash2: #60A5FA;
+  --bg-dash3: #2563EB;
+
+  --bg-progress1: #F97316;
+  --bg-progress2: #EA580C;
+
+  --bg-completed1: #22C55E;
+  --bg-completed2: #16A34A;
+
+  /* ===============================
+     BOTÕES – FILTER
+  =============================== */
+  --bg-button-filter: #f3f4f6;
+  --text-button-filter: #4b5563;
+  --bg-button-filter-active: #111827;
+  --text-button-filter-active: #f9fafb;
+
+  /* ===============================
+     BOTÕES – CONFIRM / CANCEL
+  =============================== */
+  --color-button-confirm: #ECFDF5;
+  --bg-button-confirm1: #16A34A;
+  --bg-button-confirm2: #22C55E;
+
+  --color-button-cancel: #FEF2F2;
+  --bg-button-cancel1: #B91C1C;
+  --bg-button-cancel2: #EF4444;
+
+  /* ===============================
+     AÇÕES (EDIT)
+  =============================== */
+  --color-edit: #2563EB;
+  --color-editHover: #1D4ED8;
+
+  --color-edit-confirm: #16A34A;
+  --color-edit-confirmHover: #15803D;
+
+  --color-edit-remove: #DC2626;
+  --color-edit-removeHover: #B91C1C;
+
+  /* ===============================
+     ICONS
+  =============================== */
+  --icon-sun: #F59E0B;   
+  --icon-moon: #60A5FA; 
+
+
+  /* ===============================
+     LAYOUT
+  =============================== */
+  --row1: 60px;
+  --row2: 1fr;
+  --column1: 220px;
+  --column2: 1fr;
+  --main-height: 90vh;
+}
+
+body.light {
+  /* ===============================
+     BACKGROUNDS (GERAIS)
+  =============================== */
+  --bg: #F8FAFC;
+  --bg-dashboard: #F8FAFC;
+  --bg-aside: #FFFFFF;
+  --bg-title: #F1F5F9;
+  --bg-active: #E2E8F0;
+  --bg-input: #eee;
+
+  /* ===============================
+     BACKGROUNDS (CARDS / SUPERFÍCIES)
+  =============================== */
+  --bg-card: #FFFFFF;
+  --bg-cards: #F1F5F9;
+  --bg-cards-internal: #E2E8F0;
+  --bg-card-hover: #000000;
+
+  /* ===============================
+     TEXTO
+  =============================== */
+  --text: #0F172A;
+  --text-label: #334155;
+  --text-weak: #64748B;
+
+  /* ===============================
+     BORDA / SOMBRA
+  =============================== */
+  --border-color: #CBD5E1;
+  --border: 1px solid var(--border-color);
+  --box-shadow: 0px 2px 6px rgb(0 0 0 / 0.08);
+
+  /* ===============================
+     DASH / STATUS
+  =============================== */
+  --bg-dash1: #2563EB;
+  --bg-dash2: #3B82F6;
+  --bg-dash3: #1D4ED8;
+
+  --bg-progress1: #FB923C;
+  --bg-progress2: #F97316;
+
+  --bg-completed1: #22C55E;
+  --bg-completed2: #16A34A;
+
+  /* ===============================
+     BOTÕES – FILTER
+  =============================== */
+  --bg-button-filter: #E5E7EB;
+  --text-button-filter: #374151;
+  --bg-button-filter-active: #0F172A;
+  --text-button-filter-active: #F8FAFC;
+
+  /* ===============================
+     BOTÕES – CONFIRM / CANCEL
+  =============================== */
+  --color-button-confirm: #ECFDF5;
+  --bg-button-confirm1: #16A34A;
+  --bg-button-confirm2: #22C55E;
+
+  --color-button-cancel: #FEF2F2;
+  --bg-button-cancel1: #B91C1C;
+  --bg-button-cancel2: #EF4444;
+
+  /* ===============================
+     AÇÕES (EDIT)
+  =============================== */
+  --color-edit: #2563EB;
+  --color-editHover: #1D4ED8;
+
+  --color-edit-confirm: #16A34A;
+  --color-edit-confirmHover: #15803D;
+
+  --color-edit-remove: #DC2626;
+  --color-edit-removeHover: #B91C1C;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Inter, Arial, Helvetica, sans-serif;
+}
+
+html {
+    height: 100vh;
+}
+
+body {
+    background-color: var(--bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+main {
+    background-color: var(--border-color);
+    gap: 1px;
+    border-radius: 10px;
+    border: var(--border);
+    display: grid;
+    grid-template-columns: var(--column1) minmax(0, var(--column2));
+    grid-template-rows: var(--row1) var(--row2) ;
+    overflow: hidden;
+    height: var(--main-height);
+    
+}
+
+#title {
+    background-color: var(--bg-title);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    #icon-dash {
+        padding: 5px;
+        background-color: var(--bg-dash3);
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+    }
+
+    h1 {
+        font-size: 1.3em;
+        color: var(--text);
+    }
+}
+
+aside {
+    grid-area: 2 / 1 / 3 / 2 ;
+    background-color: var(--bg-aside);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    height: calc(100% - var(--row2));
+    
+    menu { 
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+
+        ul {
+            list-style-type: none;
+            display: flex;
+            flex-flow: column nowrap;
+            gap: 10px;
+
+            li {
+                display: flex;
+                gap: 15px;
+                font-size: 1.2em;
+                padding: 10px 30px ;
+                border-radius: var(--border-radius);
+                color: var(--text);
+                transition: all .3s;
+            }
+
+            li#active {
+                background-color: var(--bg-active);
+            }
+
+            li:hover {
+                cursor: pointer;
+                background-color: var(--bg-cards-internal);
+            }
+        }
+    }
+
+    button {
+        background-color: transparent;
+        display: flex;
+        padding: 10px;
+        gap: 10px;
+        color: var(--text);
+        border: 1px solid var(--border-color);
+        box-shadow: var(--box-shadow);
+        transition: all .3s;
+        border-radius: 10px;
+
+        &:hover {
+            background-color: var(--bg-card);
+            cursor: pointer;
+        }
+
+        .icon#sun {
+            color: var(--icon-sun);
+        }
+        .icon#moon {
+            color: var(--icon-moon);
+        }
+    }
+}
+
+header#header-main {
+    background-color: var(--bg-aside);
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+
+    input {
+        width: 80%;
+        height: 35px;
+        border-radius: var(--border-radius);
+        border: none;
+        padding-left: 10px;
+        background-color: var(--bg-input);
+        transition: all .2s;
+
+        &:focus {
+            transform: scale(1.01);
+        }
+    }
+
+
+    div#profile {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+    }
+}
+
+section#dash {
+    background-color: var(--bg-dashboard);
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 20px;
+    padding: 20px;
+    min-height: 0;  
+    overflow: hidden;
+}
+
+#cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 80px;
+    gap: 20px;
+
+    .card {
+        background-color: var(--bg-cards-internal);
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: start;
+        gap: 10px;
+        padding: 10px;
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        transition: all .2s;
+    
+        .icon-card {
+            padding: 8px;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            color: var(--text);
+        }
+    
+        .icon-card#project {
+            background-image: linear-gradient(to bottom, var(--bg-dash1), var(--bg-dash2), var(--bg-dash3));
+        }
+        .icon-card#todo {
+            background-image: linear-gradient(to bottom, var(--bg-progress1), var(--bg-progress2));
+        }
+        .icon-card#completed {
+            background-image: linear-gradient(to bottom, var(--bg-completed1), var(--bg-completed2));
+        }
+        .icon-card#hours {
+            background-image: linear-gradient(to bottom, purple, rgb(75, 0, 75));
+        }
+    
+        .desc {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: space-between;
+            height: 100%;
+    
+            h2 {
+                color: var(--text-weak);
+                font-size: 0.8em;
+            }
+    
+            p {
+                color: var(--text);
+                font-size: 1.7em;
+            }
+        }
+    
+        &:hover {
+            border: 1px solid var(--bg-card-hover);
+        }
+    }
+}
+
+
+div#tasks {
+    background-color: var(--bg-cards);
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 20px;
+    padding: 15px;
+    border-radius: var(--border-radius);
+    border: var(--border);  
+    overflow-y: auto;
+
+    header {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+
+        h2 {
+            color: var(--text);
+            font-size: 1em;
+        }
+
+        #buttons {
+            display: flex;
+            flex-flow: row nowrap;
+            gap: 10px;
+
+            button {
+                background-color: transparent;
+                color: var(--text);
+                border: none;
+                font-size: 1em;
+                transition: all .2s;
+
+                &:hover {
+                    color: var(--text);
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    #form-task {
+        display: flex;
+        flex-flow: row nowrap;
+        gap: 20px;
+
+        input {
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            padding: 5px;
+            transition: all .2s;
+
+            &:focus{
+                transform: scale(1.05);
+            }
+        }
+
+        select {
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+            width: 40px;
+            transition: all .1s;
+
+            &:hover {
+                transform: scale(1.1);
+                cursor: pointer;
+            }
+        }
+        
+        button#confirm {
+            color: var(--color-button-confirm);
+            background-image: linear-gradient(135deg, var(--bg-button-confirm1), var(--bg-button-confirm2));
+        }
+
+        button#cancel {
+            color: var(--color-button-cancel);
+            background-image: linear-gradient(135deg, var(--bg-button-cancel1), var(--bg-button-cancel2));
+        }
+    }
+
+    #filter {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+
+        div {
+            display: flex;
+            flex-flow: row nowrap;
+            gap: 10px;
+
+            button {
+                background-color: var(--bg-button-filter);
+                color: var(--text-button-filter);
+                border-radius: var(--border-radius);
+                box-shadow: var(--box-shadow);
+                padding: 5px 10px;
+                border: 1px solid rgb(0,0,0, .1);
+                transition: all .2s;
+
+                &:hover {
+                    transform: scale(1.1);
+                    cursor: pointer;
+                }
+            }
+
+            button.btn-filter-active {
+                background-color: var(--bg-button-filter-active);
+                color: var(--text-button-filter-active);
+            }
+        }
+    }
+
+    table {
+        background-color: var(--border-color);
+        border: var(--border);
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+
+        thead, tbody {
+            background-color: var(--bg-cards);
+        }
+
+        th {
+            text-align: left;
+            color: var(--text-weak);
+        }
+
+        th, td {
+            padding: 10px 25px;
+            font-size: 0.9em;
+        }
+
+        td {
+            color: var(--text);
+        }
+
+        td.todo p {
+            color: var(--bg-dash1);
+        }
+
+        td.progress p {
+            color: var(--bg-progress1);
+        }
+
+        td.completed p {
+            color: var(--bg-completed1);
+        }
+
+        td#edit {
+            width: 10px;
+        }
+
+        input {
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            padding: 5px;
+            transition: all .2s;
+
+            &:focus{
+                transform: scale(1.05);
+            }
+        }
+
+        select {
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: transparent;
+            border: none;
+            transition: all .3s;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        #btn-edit {
+            color: var(--color-edit);
+
+            &:hover {
+                color: var(--color-editHover);
+            }
+        }
+
+        #btn-edit-confirm {
+            color: var(--color-edit-confirm);
+
+            &:hover {
+                color: var(--color-edit-confirmHover);
+            }
+        }
+
+        #btn-edit-remove {
+            color: var(--color-edit-remove);
+
+            &:hover {
+                color: var(--color-edit-removeHover);
+            }
+        }
+    }
+}
+
+svg {
+    width: 15px;
+}
+
+.icon {
+    width: 1.2em;
+}
